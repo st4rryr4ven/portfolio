@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block body %}
+
+    <section class="page-header">
+        <h1>Portfolio d'apprentissage</h1>
+        <p>
+            Vous avez pu découvrir, à travers mes différents projets,
+            mes compétences techniques en informatique.
+            Cette page mettra en lumière des compétences moins sollicitées,
+            mais néanmoins acquises et développées au cours de mon parcours.
+        </p>
+    </section>
+
+    <section id="experiences" class="experiences">
+
+        <article class="experience">
+            <header class="experience-header">
+                <div class="experience-title">
+                    <h2>Administrer des systèmes informatiques communicants complexes</h2>
+                </div>
+
+                <div class="experience-meta">
+                    IGF – CNRS · Janvier – Avril 2025
+                </div>
+            </header>
+
+
+            <div class="experience-content">
+                <ul>
+                    <li>Développement <strong>full stack web</strong></li>
+                    <li>Participation à la conception et à l’évolution d’outils internes</li>
+                    <li>Communication avec les utilisateurs et prise en compte des besoins</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="experience">
+            <header class="experience-header">
+                <div class="experience-title">
+                    <h2>Alternance en développement web</h2>
+                </div>
+
+                <div class="experience-meta">
+                    ISA-Consulting · 2025 – 2026
+                </div>
+            </header>
+
+
+            <div class="experience-content">
+                <ul>
+                    <li>Développement <strong>full stack web</strong> sur des projets clients</li>
+                    <li>Conception fonctionnelle et technique des solutions</li>
+                    <li>Travail en équipe et échanges réguliers avec les parties prenantes</li>
+                </ul>
+            </div>
+        </article>
+
+    </section>
+
+{% endblock %}

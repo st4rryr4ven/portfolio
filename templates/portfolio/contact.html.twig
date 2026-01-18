@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+
+    <section class="page-header">
+        <h1>Contact</h1>
+        <p>Restons en contact</p>
+    </section>
+
+    <section class="contact-container">
+
+        <div class="contact-cards">
+
+            <a href="mailto:andrea.bussiere@etu.umontpellier.fr" class="contact-card">
+                <h3>Email</h3>
+                <p>andrea.bussiere@etu.umontpellier.fr</p>
+            </a>
+
+            <a href="https://www.linkedin.com/in/andr%C3%A9a-bussi%C3%A8re-8197742aa/" target="_blank" class="contact-card">
+                <h3>LinkedIn</h3>
+                <p>www.linkedin.com/in/andréa-bussière-8197742aa</p>
+            </a>
+
+            <a href="https://github.com/st4rryr4ven" target="_blank" class="contact-card">
+                <h3>GitHub</h3>
+                <p>github.com/st4rryr4ven</p>
+            </a>
+
+        </div>
+
+        <div class="cv-section">
+            <h2>Curriculum Vitae</h2>
+
+            <p>
+                Vous pouvez consulter ou télécharger mon CV pour en savoir plus
+                sur mon parcours, mes compétences et mes expériences.
+            </p>
+
+            <a href="{{ asset('cv/CV_Bussiere_Andrea.pdf') }}" class="btn-cv" download>
+                Télécharger mon CV
+            </a>
+        </div>
+
+    </section>
+
+{% endblock %}
+

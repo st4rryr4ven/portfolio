@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestaff{% endblock %}
+
+{% block body %}
+
+    <section class="project-hero">
+        <h1>Gestaff</h1>
+        <p class="project-intro">
+            Pendant 10 semaines, j'ai réalisé un stage au sein du département informatique de l'Institut de Génomique Fonctionnelle (IGF) de Montpellier.
+            J'avais pour mission de corriger et améliorer leur site de gestion du personnel, Gestaff, codé avec le framework Symfony par d'autres stagiaires comme moi.
+        </p>
+    </section>
+
+    <section class="project-content">
+
+        <article class="project-section">
+            <h2>Aperçu du projet</h2>
+
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="/img/projects/gestaff/home.png" alt="Aperçu de l'accueil">
+                    <img src="/img/projects/gestaff/hiring.png" alt="Aperçu du module recrutement">
+                    <img src="/img/projects/gestaff/requests.png" alt="Aperçu du module requetes">
+                </div>
+
+                <button class="carousel-btn next" aria-label="Image suivante">›</button>
+            </div>
+        </article>
+
+
+        <article class="project-section">
+            <h2>Mon rôle dans le projet</h2>
+
+            <ul class="project-list">
+                <li>Mise à jour de Symfony</li>
+                <li>Correction de bugs: meilleure gestion des dates, apport de flexibilité dans les fonctions, amélioration de l'expérience utilisateur</li>
+                <li>Refonte du module de requêtes : personnalisation des fichiers csv exportables</li>
+                <li>Sécurisation du site</li>
+                <li>Conception et développement d’un module afin de réaliser des demandes de stage ou d’accueil</li>
+            </ul>
+        </article>
+
+        <article class="project-section">
+            <h2>Technologies et techniques</h2>
+
+            <ul class="project-list">
+                <li>Architecture MVC</li>
+                <li>ORM Doctrine et utilisation de QueryBuilder</li>
+                <li>Formulaires Typeform</li>
+                <li>Frontend en Twig</li>
+                <li>EventListener</li>
+            </ul>
+        </article>
+
+        <article class="project-section">
+            <h2>Extraits de code</h2>
+
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="/img/projects/gestaff/codeRecruitment1.png" alt="Extrait de code">
+                    <img src="/img/projects/gestaff/codeRecruitment2.png" alt="Extrait de code">
+                    <img src="/img/projects/gestaff/codeRecruitment3.png" alt="Extrait de code">
+                    <img src="/img/projects/gestaff/newContract.png" alt="Extrait de code">
+                    <img src="/img/projects/gestaff/diagrammObject.png" alt="Diagramme des classes Object">
+                    <img src="/img/projects/gestaff/diagrammSequence.png" alt="Diagramme de séquence des interactions">
+                    <img src="/img/projects/gestaff/diary.png" alt="Aperçu de mon journal de bord">
+                </div>
+
+                <button class="carousel-btn next" aria-label="Image suivante">›</button>
+            </div>
+        </article>
+
+        <article class="project-section">
+            <h2>Apprentissages</h2>
+
+            <p>
+                Lors de mon stage, il m’a été confié la tâche de corriger et d’améliorer le site de gestion du personnel de l’Institut de Génomique Fonctionnelle.
+                J’étais en <b><i>totale autonomie </i></b>  pour ce projet : je travaillais seule, aussi bien sur le plan du code que sur celui de la communication.
+                Pour rester organisée, j’ai décidé de tenir un journal de bord personnel, dans lequel je notais le statut de chaque tâche (à faire, terminée, ou en attente de validation),
+                les problèmes rencontrés, ainsi que les solutions apportées (C5 AC4).
+                Mes « clientes » étaient les membres du service RH, des personnes sans connaissances techniques en informatique. Elles savaient ce qu’elles voulaient faire en tant qu’utilisatrices,
+                mais c’était à moi de <b><i>traduire ces besoins en solutions techniques</i></b>  (C1 AC1, C5 AC2).
+                Pour m’assurer que ce que je développais correspondait à leurs attentes, <b><i>je communiquais régulièrement</i></b> avec elles, que ce soit par mail ou en face à face, et je leur proposais fréquemment
+                de <b><i>tester</i></b> mes corrections (C1 AC4, C6 AC3, C6 AC4). Je faisais aussi part de mes avancées à mon maître de stage, et par la suite, j’ai rédigé un rapport de stage destiné à mes enseignants d
+                e l’IUT, afin qu’ils comprennent ce que j’avais réalisé (C6 AC2, C6 AC4).
+                Gestaff faisait partie d’un ensemble plus large d’outils de gestion utilisés à l’IGF. Cette expérience m’a permis de travailler sur une <b><i>application intégrée dans un système interconnecté</i></b>.
+                Par exemple, j’ai programmé l’envoi automatique de mails aux services RH et de gestion lors de la création d’une nouvelle demande de recrutement (C3 AC1).
+                La partie la plus importante de mon projet consistait à ajouter un nouveau module permettant à tout employé de l’institut de soumettre une demande de stage ou d’accueil pour une tierce
+                personne. Le service RH recevait alors cette demande et décidait de sa validation. Si elle était acceptée, elle était convertie en contrat. Ce module devait considérablement faciliter
+                le travail des RH, je me suis donc assurée que la <b><i>navigation soit intuitive et cohérente</i></b>.
+                Par exemple, Gestaff suit une logique bien précise pour la création de contrats : on vérifie d’abord si la personne est déjà enregistrée (et on la crée si nécessaire), puis on ajoute
+                un contrat à son dossier. Pour le module Recrutement, j’ai donc mis en place un mécanisme où, lorsqu’un utilisateur clique sur "Valider la demande", il est redirigé vers
+                la recherche de personnel avec les champs nom et prénom préremplis à partir des informations de la demande. Ensuite, lorsqu’on lui ajoute un contrat, un <b><i>algorithme</i></b> vérifie
+                s’il existe une demande validée à son nom, et si c’est le cas, en récupère automatiquement les données (C1 AC2, C2 AC2).
+                D’un point de vue technique, j’ai remarqué que les différents types de demandes partageaient de nombreuses informations communes (nom du demandeur, nom du stagiaire ou accueilli,
+                date de début, institut de rattachement…). Les RH envisageaient également d’ajouter les demandes de CDD, qui reprendraient les mêmes champs. J’ai donc décidé de créer une <b><i>classe
+                        abstraite </i></b> Recruitment, dont hériteraient RecruitmentIntern et RecruitmentVisitor.
+                Un exemple d’utilisation de cette classe abstraite concerne l’affichage des fiches de demande : au lieu d’utiliser un if...else pour déterminer quel document Twig affiché selon
+                le type de demande, j’ai implémenté une méthode getType() dans les Repository qui retourne intern ou visitor, me permettant ainsi d’appeler <b><i>dynamiquement</i></b> le fichier Twig correspondant
+                via 'formulaire'. recruitment.getType().'.html.twig'.
+                Cela permet de limiter la duplication de code et de faciliter l’ajout de nouveaux types de recrutement (C1 AC3).
+                Enfin, étant donné que le site manipulait des <b><i>données personnelles</i></b>, j’ai veillé à sécuriser leur accès. Par exemple, j’ai découvert qu’il était possible d’accéder à
+                certaines pages sans être connecté, en connaissant simplement leur URL. J’ai donc ajouté des mécanismes de contrôle d’accès, comme des vérifications de rôles minimums,
+                pour m’assurer qu’aucune personne non autorisée ne puisse consulter ces informations sensibles (C2 AC3, C3 AC3, C4 AC2).
+            </p>
+
+
+        </article>
+
+    </section>
+
+{% endblock %}

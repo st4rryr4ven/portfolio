@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MyAvatar{% endblock %}
+
+{% block body %}
+
+    <section class="project-hero">
+        <h1>MyAvatar</h1>
+        <p class="project-intro">
+            Lors de ma troisième année, il nous a été demandé de réaliser en petits groupes une application de gestion d'avatar
+            qui permettait d'associer une photo de profil à une adresse mail.
+        </p>
+        <a href="https://webinfo.iutmontp.univ-montp2.fr/~mezencey/my-avatar/public/login" class="btn" style="margin-top: 10px" >
+            <p>Tester l'application !</p>
+        </a>
+
+    </section>
+
+    <section class="project-content">
+
+        <article class="project-section">
+            <h2>Fonctionnalités principales</h2>
+
+            <ul class="project-list">
+                <li>Gestion du profil (inscription et connection, modification, suppression)</li>
+                <li>Gestion des rôles : les administrateurs ont accés à la liste de tous les utilisateurs et peuvent supprimer leurs comptes</li>
+                <li>Possibilité de masquer son compte</li>
+                <li>Mode maintenance</li>
+                <li>Plusieurs commandes symfony personnelles : créer un utilisateur, lui rajouter ou enlever le rôle admin, le supprimer</li>
+            </ul>
+        </article>
+
+        <article class="project-section">
+            <h2>Aperçu du projet</h2>
+
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="/img/projects/myavatar/profile.png" alt="Aperçu du profil">
+                    <img src="/img/projects/myavatar/registration.png" alt="Aperçu de la page inscription">
+                    <img src="/img/projects/myavatar/usersList.png" alt="Aperçu de la gestion utilisateurs">
+                    <img src="/img/projects/myavatar/commands.png" alt="Aperçu des commandes terminal">
+                </div>
+
+                <button class="carousel-btn next" aria-label="Image suivante">›</button>
+            </div>
+        </article>
+
+
+        <article class="project-section">
+            <h2>Technologies et techniques</h2>
+
+            <ul class="project-list">
+                <li>Architecture MVC</li>
+                <li>EventListener, EventSubscriber</li>
+                <li>Voter pour la gestion des droits</li>
+                <li>Formulaire TypeForm</li>
+                <li>Messages flash</li>
+                <li>Frontend en Twig</li>
+            </ul>
+        </article>
+
+        <article class="project-section">
+            <h2>Détails & processus</h2>
+
+            <div class="carousel">
+                <div class="carousel-track">
+                <img src="/img/projects/myavatar/createUser.png" alt="Aperçu du code pour la commande symfony createUser">
+                <img src="/img/projects/myavatar/userController.png" alt="Aperçu du UserController">
+                <img src="/img/projects/myavatar/userManager.png" alt="Aperçu de UserManager">
+                <img src="/img/projects/myavatar/userVoter.png" alt="Aperçu du UserVoter">
+                </div>
+
+                <button class="carousel-btn next" aria-label="Image suivante">›</button>
+            </div>
+        </article>
+
+        <article class="project-section">
+            <h2>Apprentissages</h2>
+
+            <p>
+                Lors du projet MyAvatar, j’ai participé au développement d’une application web réalisée avec le framework Symfony, en travaillant au sein d’un groupe de quatre personnes.
+                L’objectif du projet était de concevoir une application complète, structurée et évolutive, en respectant un cahier des charges fonctionnel et technique.
+                Dès le début du projet, nous avons fait le choix d’une <b><i>architecture MVC</i></b> afin de séparer clairement les responsabilités entre la logique métier, le contrôle des données et l’affichage.
+                Cette architecture nous a permis de <b><i>structurer le projet de manière lisible et maintenable</i></b>. Le frontend de l’application a été développé à l’aide de Twig, ce qui nous a permis de créer
+                des vues dynamiques tout <b><i>en limitant la duplication de code</i></b> grâce à l’héritage de templates et aux inclusions de composants communs (C1 AC31.01).
+                Une part importante de l’application concernait la gestion des utilisateurs. Nous avons implémenté un système complet de gestion de profil comprenant l’inscription, la connexion,
+                la modification et la suppression de compte. Pour cela, nous avons utilisé les FormType de Symfony, qui nous ont permis de définir précisément les champs des formulaires, leurs <b><i>contraintes
+                de validation </i></b>et leur liaison avec les entités. Des messages flash ont également été mis en place afin de fournir un <b><i>retour clair à l’utilisateur</i></b> après chaque action importante, comme la
+                création ou la modification de son compte (C1 AC21.02, C1 AC21.03).
+                La gestion des droits a constitué un aspect central du projet. Nous avons implémenté un système de rôles permettant de distinguer les utilisateurs standards des administrateurs.
+                Les administrateurs disposent d’un accès spécifique à une interface listant l’ensemble des utilisateurs de l’application, avec la possibilité de supprimer leurs comptes.
+                Afin de sécuriser ces fonctionnalités, nous avons utilisé des <b><i>Voters Symfony pour centraliser et contrôler les règles d’autorisation</i></b>. Ce mécanisme permet de vérifier finement les droits
+                d’un utilisateur avant l’accès à une action sensible, comme la suppression d’un compte, garantissant ainsi la protection des données et le respect des règles d’accès
+                (C1 AC31.01, C2 AC22.03, C3 AC23.03).
+                Un mode maintenance a aussi été intégré à l’application. Lorsqu’il est activé, l’accès au site est restreint pour les utilisateurs non administrateurs. Cette fonctionnalité a été
+                implémentée à l’aide d’EventListener ou d’EventSubscriber Symfony, qui interceptent les requêtes afin de rediriger les utilisateurs vers une page dédiée. Ce choix technique permet une
+                <b><i>gestion centralisée et propre du mode maintenance</i></b>, sans avoir à modifier chaque contrôleur individuellement (C1 AC31.03).
+                Dans une optique d’administration et d’automatisation, nous avons créé plusieurs commandes Symfony personnalisées. Ces commandes permettent de créer un utilisateur, de lui ajouter
+                ou de lui retirer le rôle administrateur, ou encore de supprimer un compte directement en ligne de commande. Elles facilitent la <b><i>gestion de l’application</i></b> en environnement de développement
+                ou de production et illustrent <b><i>l’intégration de l’application dans un contexte d’exploitation réel </i></b> (C1 AC31.03, C3 AC23.01).
+                Tout au long du projet, nous avons travaillé en équipe de manière collaborative. Les tâches ont été réparties entre les membres du groupe en fonction des fonctionnalités à développer,
+                et nous avons régulièrement échangé sur nos avancées et nos choix techniques. Nous avons également dû intégrer le travail des autres membres du groupe, résoudre des conflits de code
+                et harmoniser nos pratiques afin de garantir la cohérence globale du projet. Cette expérience m’a permis de renforcer mes <b><i>compétences en communication technique, en travail d’équipe et
+                        en organisation collective</i></b> (C6 AC26.02, C6 AC26.03, C6 AC36.04).
+                Enfin, ce projet m’a permis de consolider mes compétences en <b><i>réalisation d’applications web complexes, en optimisation de la structure et de la qualité du code, ainsi qu’en collaboration
+                        au sein d’une équipe de développement</i></b>. Le recours à des mécanismes avancés de Symfony, comme les Voters, les EventSubscriber ou les commandes personnalisées, m’a permis d’approfondir ma
+                compréhension des architectures web professionnelles et de produire une application robuste, sécurisée et évolutive (C1 AC31.01, C2 AC32.02, C6 AC36.03).
+
+            </p>
+
+
+        </article>
+
+    </section>
+
+{% endblock %}

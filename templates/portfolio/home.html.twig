@@ -1,0 +1,172 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Andréa Bussière{% endblock %}
+
+{% block body %}
+
+    <section id="hero">
+        <div class="hero-text">
+            <h1>
+                Andréa<br>
+                <span class="accent">Bussière</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Étudiante en BUT Informatique — Développeuse full stack<br>
+                Créative, méthodique et tournée vers l’humain
+            </p>
+
+            <div class="hero-actions">
+                <a href="#presentation" class="btn">À propos de moi</a>
+                <a href="#competences" class="btn btn-outline">Mes compétences</a>
+                <a href="#parcours" class="btn btn-outline">Mon parcours</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="presentation">
+        <div class="presentation-grid">
+
+            <div class="presentation-text">
+                <h2>À propos</h2>
+
+                <p>
+                    Je m’appelle Andréa et je suis actuellement étudiante en BUT Informatique à l’IUT de Montpellier.
+                    Je souhaite devenir développeuse full stack, un métier qui me séduit par sa diversité et sa créativité,
+                    mais je m’intéresse également au développement de jeux vidéo.
+                    J’aime concevoir des expériences, raconter des histoires et laisser libre cours à ma
+                    créativité à travers le code, ce qui me pousse aujourd’hui à explorer ces deux domaines.
+                </p>
+
+                <p>
+                    Après un baccalauréat scientifique, j’ai suivi une licence LLCER Anglais,
+                    qui m’a permis de développer une excellente maîtrise de la langue ainsi
+                    qu’une forte capacité d’analyse et de communication.
+                </p>
+
+                <p>
+                    Curieuse, créative et organisée, j’ai trouvé dans le développement web
+                    l’équilibre parfait entre logique et imagination.
+                </p>
+            </div>
+
+            <div class="presentation-highlights">
+                <div class="highlight-card">
+                    <h3>🎨 Créativité</h3>
+                    <p>Design, réflexion UX, solutions sur mesure</p>
+                </div>
+
+                <div class="highlight-card">
+                    <h3>🧠 Logique</h3>
+                    <p>Analyse, structuration, résolution de problèmes</p>
+                </div>
+
+                <div class="highlight-card">
+                    <h3>💬 Humain</h3>
+                    <p>Empathie, écoute, compréhension des besoins</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="competences">
+        <h2>Compétences</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <img src="/img/icons/web.png" alt="Développement web">
+                <h3>Développement web</h3>
+                <p>PHP, HTML, CSS, Twig, JavaScript, Vue.js</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="/img/icons/code.png" alt="Programmation">
+                <h3>Programmation</h3>
+                <p>Java, C</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="/img/icons/db.png" alt="Bases de données">
+                <h3>Bases de données</h3>
+                <p>SQL, PostgreSQL, NoSQL, Doctrine</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="/img/icons/git.png" alt="Gitlab">
+                <h3>Gitlab</h3>
+                <p>Collaboration, gestion de versions, CI/CD</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="/img/icons/teamwork.png" alt="Gestion de projet">
+                <h3>Gestion de projet</h3>
+                <p>Organisation, communication, travail en équipe</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="/img/icons/agile.png" alt="Méthodes agiles">
+                <h3>Méthodes agiles</h3>
+                <p>Adaptabilité, amélioration continue</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="/img/icons/softskills.png" alt="Soft skills">
+                <h3>Soft skills</h3>
+                <p>Créativité, esprit d’équipe, autonomie</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="/img/icons/languages.png" alt="Langues">
+                <h3>Langues</h3>
+                <p>🇫🇷 Français — natif</p>
+                <p>🇬🇧 Anglais — C1/C2</p>
+                <p> 🇪🇸 Espagnol — B1/B2</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="parcours">
+        <h2>Parcours scolaire</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>2026 ?</h3>
+                    <h4>Master</h4>
+                    <p>En développement de jeux vidéos ou en développement full stack</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>2023 — 2026</h3>
+                    <h4>BUT Informatique</h4>
+                    <p>IUT de Montpellier — Développement, bases de données, gestion de projets.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>2020 — 2023</h3>
+                    <h4>Licence LLCER Anglais</h4>
+                    <p>Université de Nîmes — Expression écrite, orale et traduction.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>2017 — 2020</h3>
+                    <h4>Baccalauréat Scientifique</h4>
+                    <p>Lycée Alphonse Daudet — Mention Très Bien.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}
+

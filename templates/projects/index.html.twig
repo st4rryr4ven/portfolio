@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projets{% endblock %}
+
+{% block body %}
+
+    <section class="page-header">
+        <h1>Projets</h1>
+        <p>
+            Une sélection de projets réalisés durant mes études et mon temps personnel,
+            mêlant développement web, programmation et travail en équipe.
+        </p>
+    </section>
+
+    <section id="projects">
+
+        <div class="projects-grid">
+
+            <a href="{{ path('project_gestaff') }}" class="project-link">
+                <div class="project-card">
+                    <h3>Gestaff</h3>
+                    <span class="project-tag">Symfony</span>
+                    <p>
+                        Développement d’un site de gestion du personnel :
+                        gestion des utilisateurs, rôles, planning et données internes.
+                    </p>
+                </div>
+            </a>
+
+
+            <a href="{{ path('project_sconote') }}" class="project-link">
+                <div class="project-card">
+                    <h3>Sconote</h3>
+                    <span class="project-tag">PHP</span>
+                    <p>
+                        Site intranet d’aide à la génération d’avis de poursuite d’étude,
+                        destiné aux équipes pédagogiques.
+                    </p>
+                </div>
+            </a>
+
+            <a href="{{ path('project_trains') }}" class="project-link">
+                <div class="project-card">
+                    <h3>Trains</h3>
+                    <span class="project-tag">Java / JavaFX</span>
+                    <p>
+                        Implémentation du jeu Trains avec interface graphique,
+                        logique métier et gestion des règles du jeu.
+                    </p>
+                </div>
+            </a>
+
+            <a href="{{ path('project_myavatar') }}" class="project-link">
+                <div class="project-card">
+                    <h3>MyAvatar</h3>
+                    <span class="project-tag">Symfony</span>
+                    <p>
+                        Site web de gestion d’avatars permettant la création,
+                        la personnalisation et la sauvegarde de profils.
+                    </p>
+                </div>
+            </a>
+
+            <a href="{{ path('project_melovibes') }}" class="project-link">
+                <div class="project-card">
+                    <h3>Melovibes</h3>
+                    <span class="project-tag">API Platform · Vue.js</span>
+                    <p>
+                        Plateforme de critiques musicales avec authentification,
+                        API REST et interface front dynamique.
+                    </p>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+{% endblock %}
+

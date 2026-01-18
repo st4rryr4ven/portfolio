@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sconote{% endblock %}
+
+{% block body %}
+
+    <section class="project-hero">
+        <h1>Sconote</h1>
+        <p class="project-intro">
+            Le projet Sconote est un site intranet dont le but principal est de permettre aux professeurs du BUT Informatique de l’IUT de Montpellier
+            d’automatiser la génération d’avis de poursuite d’étude. Le site doit également permettre aux différentes écoles recrutant les diplômés du BUT,
+            ainsi qu’aux élèves concernés, d’accéder aux dossiers.
+            Le site web a été développé avec les langages de programmation PHP, HTML et CSS. Il utilise le serveur de base de données MySQL.
+        </p>
+    </section>
+
+    <section class="project-content">
+
+        <article class="project-section">
+            <h2>Fonctionnalités principales</h2>
+
+            <ul class="project-list">
+                <li>Import de notes via fichiers cvs</li>
+                <li>Création d'agrégations de matières</li>
+                <li>Création d'avis</li>
+                <li>Attribution automatique des avis selon les notes des élèves</li>
+                <li>Gestion des accès dossier élève (lien d'accès, masquage du dossier)</li>
+                <li>Génération de la fiche d'avis en pdf</li>
+                <li>Réinitialisation des données</li>
+                <li>Gestion des comptes</li>
+                <li>Gestion des parcours et des matières</li>
+                <li>Calendrier</li>
+                <li>Validation du compte par mail</li>
+                <li>Graphes montrant la progression d'un élève, ses points forts et ses points faibles</li>
+                <li>Classement des étudiants</li>
+
+            </ul>
+        </article>
+
+        <article class="project-section">
+            <h2>Détails et processus</h2>
+
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="/img/projects/sconote/studentsList.png" alt="Liste des élèves">
+                    <img src="/img/projects/sconote/access.png" alt="Gestion des accès">
+                    <img src="/img/projects/sconote/agregations.png" alt="Création d'agrégations">
+                    <img src="/img/projects/sconote/import.png" alt="Import des notes">
+                    <img src="/img/projects/sconote/graphs.png" alt="Graphes">
+                    <img src="/img/projects/sconote/opinion.png" alt="Création d'avis">
+                    <img src="/img/projects/sconote/ranking.png" alt="Classement des élèves">
+                </div>
+
+                <button class="carousel-btn next" aria-label="Image suivante">›</button>
+            </div>
+        </article>
+
+        <article class="project-section">
+            <h2>Technologies et techniques</h2>
+
+            <ul class="project-list">
+                <li>Architecture MVC</li>
+                <li>Requêtes préparées</li>
+                <li>Messages flash</li>
+                <li>Cookie, Session</li>
+                <li>Connexion à une base de données via PDO</li>
+            </ul>
+        </article>
+
+        <article class="project-section">
+            <h2>Extraits de code</h2>
+
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="/img/projects/sconote/opinionController.png" alt="Code du AvisController">
+                    <img src="/img/projects/sconote/codeRankStudents.png" alt="Code du classement des élèves">
+                    <img src="/img/projects/sconote/viewRankingStudents.png" alt="Vue du classement élève">
+                    <img src="/img/projects/sconote/accountController.png" alt="Code du CompteController">
+                    <img src="/img/projects/sconote/codeGeneratorPdf.png" alt="Code du générateur de pdf">
+                    <img src="/img/projects/sconote/codeImport.png" alt="Code de l'import de notes">
+                    <img src="/img/projects/sconote/repository.png" alt="Code d'un repository">
+                </div>
+
+                <button class="carousel-btn next" aria-label="Image suivante">›</button>
+            </div>
+        </article>
+
+        <article class="project-section">
+            <h2>Apprentissages</h2>
+
+            <p>
+                Le projet <b><i> Sconote </i></b>  était une première approche du monde du travail : nous devions produire une application qui répondrait aux besoins d'une cliente. Nous n'avions aucun morceau de code ou quoi
+                que ce soit d'autre pour se baser. C'était à nous de <b> <i> traduire les exigences de la cliente </i> </b>en code. Concrètement, l'un des points les plus importants du site était la possibilité de créer
+                des agrégations de matières afin que les professeurs puissent calculer une note pour chaque élève ayant ces matières. Ainsi, une agrégation contient plusieurs ressources, mais peut également
+                contenir plusieurs agrégations créées auparavant. Niveau code, cette fonctionnalité a été rendue possible par la création d'une entité Élément Groupable qui représente les agrégations et les
+                ressources (ces deux classes extends la classe ElementGroupable) de sorte qu' <b> <i>une agrégation puisse contenir elle-même une autre agrégation </i></b>. (C1 AC1 ; C2 AC1; C5 AC2). Un autre point important à
+                prendre en compte est le caractère personnel des données traitées : puisque les écoles peuvent être des utilisateurs de ce site afin de consulter les notes des élèves qui les intéressent, il
+                fallait s'assurer que ces <b> <i>informations personnelles soient protégées </i> </b>. Nous sommes donc passés par deux systèmes : l'élève peut générer un code donnant accès à son dossier et le partager à qui
+                il le souhaite, ou bien l'école peut directement faire une demande d'accès au dossier d'un élève qui sera validée ou non par l'étudiant concerné. Cette méthode permet d'assurer la
+                confidentialité des données (C1 AC1; C2 AC3; C4 AC2; C4 AC3; C5 AC2). Mais cela ne peut pas suffire pour être certain de la <b> <i>sécurité des données </i> </b> : un utilisateur malveillant pourrait se faire
+                passer pour quelqu'un d'autre ou injecter des morceaux de code afin d'avoir accès à des informations de la base de données. Nous devions donc nous assurer que cela ne serait pas possible via
+                par exemple des <b> <i>requêtes préparées </i> </b>(C2 AC3; C3 AC1; C3 AC3; C4 AC2; C4 AC4).
+                Comme dit précédemment, ce site sera utilisé par des professeurs de l'IUT, des étudiants et des membres d'écoles recrutant les diplômés de l'IUT. Étant donné le caractère hétéroclite des
+                utilisateurs, il est important de respecter <b> <i>les principes d'accessibilité et d'ergonomie </i> </b> afin d'assurer une bonne expérience utilisateur. Cela peut passer par un soin des couleurs choisies,
+                de la façon dont est structurée l'information, ou encore la possibilité d'utiliser les flèches de tabulation (C1 AC2; C2 AC4).
+                De plus, il est important de rappeler que ce site a vocation à durer dans le temps puisqu'il est là pour faciliter la décision d'avis de poursuite d'études par les professeurs du BUT
+                Informatique. Il est donc nécessaire que <b> <i>le programme soit bien codé </i> </b> afin qu'il puisse correctement fonctionner quels que soient les cas d'utilisation et qu'il puisse continuer d'évoluer
+                si besoin.
+                Il fallait donc d'une part appliquer les <b><i>bonnes pratiques de conception et de programmation </i></b>  (C1 AC2) telles que <b> <i> le respect des principes SOLID </i> </b>, effectuer régulièrement des <b> <i> tests </i> </b> pour vérifier
+                que le site ne plante pas à la moindre erreur d'un utilisateur (C1 AC4).
+                Enfin, ce projet avait pour but de montrer la réalisation d'une application web dans le cadre d'une équipe suivant <b> <i> la méthode agile </i> </b> . Ainsi, nous étions en équipe de cinq travaillant sur un
+                même projet : nous devions donc répartir équitablement les tâches, savoir communiquer entre nous pour avoir une bonne ambiance de groupe et donc pouvoir produire un travail de
+                qualité (C6 AC2; C6 AC3). Outre <b> <i>l'aspect interpersonnel à l'intérieur du groupe</i></b>, nous devions <b> <i> communiquer avec la cliente </i> </b> pour formaliser ce qui était attendu par elle (C5 AC2), mais aussi lui faire part
+                de l'avancée du projet pour une question de transparence. Cela s'est décrit par des réunions régulières avec elle pour montrer les avancées du projet et s'assurer que ce qui était fait correspondait à ce
+                qui était désiré (C5 AC3; C5 AC4; C6 AC4).
+            </p>
+
+
+        </article>
+
+    </section>
+
+{% endblock %}

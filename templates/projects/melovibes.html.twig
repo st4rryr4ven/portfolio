@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Melovibes{% endblock %}
+
+{% block body %}
+
+    <section class="project-hero">
+        <h1>Melovibes</h1>
+        <p class="project-intro">
+            L'application Melovibes permet de donner son avis sur n'importe quelle musique.
+            Nous avons développé notre propre API Rest avec Symfony pour gérer la partie back-end.
+            Nous avons également utilisé l'API Spotify pour récupérer leurs musiques et pouvoir se connecter avec son propre compte.
+            Le front a lui été développé avec Vue.js et communique avec cette API.
+        </p>
+    </section>
+
+    <section class="project-content">
+
+        <article class="project-section">
+            <h2>Fonctionnalités principales</h2>
+
+            <ul class="project-list">
+                <li>Connexion avec l'API Spotify pour récupérer les musiques</li>
+                <li>Création de musiques personnelles</li>
+                <li>Création, modification et suppression d'avis sur les musiques</li>
+                <li>Création de musiques favories</li>
+                <li>Gestion de rôles</li>
+                <li>Connexion avec son propre compte Spotify</li>
+                <li>Envoi de mail après suppression de compte ou si mot de passe oublié</li>
+            </ul>
+        </article>
+
+        <article class="project-section">
+            <h2>Aperçu du projet</h2>
+
+            <div class="carousel">
+                <div class="carousel-track">
+                <img src="/img/projects/melovibes/home.png" alt="Accueil du site">
+                <img src="/img/projects/melovibes/login.png" alt="Page de connexion">
+                <img src="/img/projects/melovibes/searchbar.png" alt="Barre de recherche via spotify">
+                <img src="/img/projects/melovibes/detailMusic.png" alt="Page détail d'une musique">
+                <img src="/img/projects/melovibes/review.png" alt="Ajout d'un avis">
+                <img src="/img/projects/melovibes/profile.png" alt="Profil">
+                <img src="/img/projects/melovibes/musics.png" alt="Liste des musiques ajoutées">
+                <img src="/img/projects/melovibes/favorites.png" alt="Musiques favories de l'utilisateur">
+                <img src="/img/projects/melovibes/addMusic.png" alt="Ajouter une musique">
+
+                </div>
+                    <button class="carousel-btn next" aria-label="Image suivante">›</button>
+                </div>
+        </article>
+
+        <article class="project-section">
+            <h2>Technologies et techniques</h2>
+
+            <ul class="project-list">
+                <li>Architecture MVC</li>
+                <li>Voter pour la gestion des droits</li>
+                <li>Groupes de sérialisations</li>
+                <li>Processors pour traiter les données complexes</li>
+                <li>Mailer</li>
+                <li>EventListener, EventSubscriber</li>
+                <li>Messages flash</li>
+            </ul>
+        </article>
+
+        <article class="project-section">
+            <h2>Extraits de code</h2>
+
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="/img/projects/melovibes/reviewClass.png" alt="Classe Review">
+                    <img src="/img/projects/melovibes/musicVoter.png" alt="Voter pour la musique">
+                    <img src="/img/projects/melovibes/musicApi.png" alt="musicApi">
+                    <img src="/img/projects/melovibes/SingleUser.png" alt="Vue SingleUser">
+                    <img src="/img/projects/melovibes/userProcessor.png" alt="Processor pour l'utilisateur">
+
+                </div>
+                <button class="carousel-btn next" aria-label="Image suivante">›</button>
+            </div>
+        </article>
+
+        <article class="project-section">
+            <h2>Apprentissages</h2>
+
+            <p>
+                L’application Melovibes permet aux utilisateurs de donner leur avis sur n’importe quelle musique. Ce projet a été réalisé en groupe et avait pour objectif de nous confronter à une
+                architecture moderne reposant sur une <b><i>séparation complète entre le back-end et le front-end</i></b>. Nous avons développé notre propre API REST avec Symfony pour la gestion des données et
+                des règles métier, tandis que le front-end a été réalisé avec Vue.js, qui communique exclusivement avec cette API (C1 AC31.01,C2 AC23.01, C4 AC24.03).
+                Dès la conception du projet, nous avons opté pour une architecture MVC côté back-end, afin de structurer clairement la logique métier, la gestion des données et l’exposition des
+                ressources via des endpoints REST. Cette organisation nous a permis de produire une <b><i>API claire, maintenable et évolutive, capable d’être utilisée par différents clients </i></b>.
+                Le choix d’une API REST indépendante du front nous a également amenés à réfléchir précisément aux formats d’échange de données et aux responsabilités de chaque couche de l’application (C1 AC31.01).
+                L’une des fonctionnalités principales de Melovibes repose sur l’intégration de l’API Spotify. Nous avons mis en place un système permettant aux utilisateurs de récupérer des musiques
+                directement depuis la plateforme. Cette intégration nous a confrontés à la <b><i>gestion d’API externes et à la manipulation de données provenant d’une source tierce </i></b>, que nous avons ensuite
+                adaptées à notre propre modèle applicatif (C1 AC21.01, C2 AC22.01, C3 AC23.01).
+                La gestion des droits a constitué un point central du projet. Nous avons utilisé des <b><i>Voters Symfony afin de contrôler précisément les actions autorisées</i></b> pour chaque utilisateur,
+                notamment pour la modification ou la suppression d’avis. Ce mécanisme nous a permis de centraliser les règles de sécurité et d’éviter leur duplication dans les contrôleurs. Il garantit
+                également que seules les personnes autorisées peuvent effectuer des actions sensibles, comme la suppression de contenu ou l’accès à certaines ressources (C1 AC31.01, C2 AC22.03, C3 AC23.03).
+                Afin d’optimiser les échanges entre le back-end et le front-end, nous avons mis en place des <b><i>groupes de sérialisation</i></b>. Ceux-ci permettent de contrôler précisément les données exposées par
+                l’API en fonction du contexte (liste, détail, création, modification). Cette approche nous a permis de <b><i>limiter la quantité de données échangées, d’améliorer les performances de l’application
+                        et de renforcer la sécurité</i></b> en évitant l’exposition d’informations inutiles ou sensibles (C2 AC32.02, C2 AC32.03).
+                Pour le traitement de certaines opérations complexes, notamment lors de la création ou de la modification de ressources via l’API, nous avons utilisé des <b><i>Processors</i></b> . Ces composants
+                nous ont permis de centraliser la logique métier liée au traitement des données reçues, tout en conservant des contrôleurs légers et lisibles. Cette organisation améliore la maintenabilité
+                du code et facilite l’évolution de l’application (C1 AC31.02).
+                Tout au long du projet, <b><i>le travail en équipe</i></b> a été essentiel. Nous avons réparti les tâches entre les membres du groupe en fonction des compétences de chacun, tout en veillant à
+                maintenir une vision commune de l’architecture et des choix techniques. Des <b><i>échanges réguliers</i></b> nous ont permis de synchroniser nos travaux, d’intégrer les différentes parties
+                du projet et de résoudre collectivement les problèmes rencontrés, notamment lors de l’interconnexion entre le front Vue.js et l’API Symfony (C6 AC26.02, C6 AC36.04).
+                Ce projet m’a permis de développer une vision plus globale du développement web moderne, en travaillant sur une application complète intégrant une API REST, un front-end dynamique et
+                des services externes. Il m’a permis de renforcer <b><i>mes compétences en conception d’architectures web, en optimisation des échanges de données et en collaboration au sein d’une équipe
+                        de développement</i></b>, dans un contexte très proche des pratiques professionnelles actuelles (C1 AC31.01, C2 AC32.03, C6 AC36.04).
+            </p>
+
+
+        </article>
+
+    </section>
+
+{% endblock %}

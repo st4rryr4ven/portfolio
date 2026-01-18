@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trains{% endblock %}
+
+{% block body %}
+
+    <section class="project-hero">
+        <h1>Trains</h1>
+        <p class="project-intro">
+            Programmation du jeu Trains, un  jeu de gestion où on incarne un capitaliste à l'époque de l'essor ferroviaire au Japon.
+            On commence avec un petit ensemble de cartes et, au fil des tours, on peut construire un deck plus puissant pour
+            établir des lignes de chemin de fer et des stations dans des villes emblématiques comme Osaka et Tokyo.
+            Ce jeu a été programmé en Java et JavaFX.
+        </p>
+    </section>
+
+    <section class="project-content">
+
+        <article class="project-section">
+            <h2>Algorithmie</h2>
+            <p> Programmation d'algorithmes de base spécifiques au jeu Trains tel que:</p>
+            <ul class="project-list">
+                <li>Algorithme de coloration du graphe de plateau (avec un nombre minimal de couleurs)</li>
+                <li>Détermination du coût minimal pour relier par des rails deux sommets</li>
+                <li>Renvoie de la classe de connexité d'un sommet</li>
+                <li>Fusion d'ensembles de sommets...</li>
+            </ul>
+        </article>
+
+        <article class="project-section">
+            <h2>Aperçu du projet</h2>
+
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="/img/projects/trains/algo.png" alt="Aperçu d'un algorithme">
+                </div>
+            </div>
+        </article>
+
+        <article class="project-section">
+            <h2>IHM</h2>
+
+            <p>
+                Réalisation d'une interface graphique en JavaFX pour la mécanique du jeu Trains
+            </p>
+
+
+        </article>
+
+        <article class="project-section">
+            <h2>Détails & processus</h2>
+
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="/img/projects/trains/ihm.png" alt="Aperçu de l'IHM">
+                </div>
+            </div>
+        </article>
+
+        <article class="project-section">
+            <h2>Apprentissages</h2>
+
+            <p>
+                À la fin de ma première année, j’ai participé à la création d’une plateforme numérique pour le jeu Trains. Ce projet, réalisé en binôme et pendant 3 mois,
+                consistait à <b> <i> développer plusieurs algorithmes </i> </b> permettant de <b> <i> définir des stratégies de jeu pour les joueurs et à finaliser le calcul des scores </i> </b> .
+                Parmi les tâches accomplies, nous avons conçu des méthodes pour identifier si un graphe était un cycle ou une chaîne, ainsi que pour effectuer des colorations gloutonnes.
+                Par la suite, nous avons également codé <b> <i>l’interface utilisateur (IHM) du jeu </i></b>.
+                Un point important était bien entendu le <b> <i>respect des règles du jeu </i></b>  : nous devions faire attention à ce qu’on ne puisse pas poser de rails n’importe où,
+                que jouer telle carte donnait telle action, que les scores étaient bien mis à jour… (C1 AC1, C5 AC2). De plus, nous souhaitions proposer un <b> <i> design à la fois clair et ergonomique </i> </b> .
+                Avec ma binôme, nous avons mis l’accent sur <b> <i>une interface à la fois esthétique et fonctionnelle </i> </b>. Par exemple, nous avons disposé les éléments de manière intuitive :
+                la main du joueur est visible devant lui, et la pioche se trouve à droite, une disposition naturelle pour les droitiers. Chaque joueur est identifié par une couleur,
+                et celle du joueur actif apparaît dans un cadre à gauche, accompagnée de ses informations, pour faciliter le suivi de la partie (C1 AC2).
+                Nous avons également réalisé des <b> <i>tests automatiques </i></b>  pour nous assurer que le jeu fonctionnait correctement et s’adaptait à différents cas possibles (C1 AC4).
+                Un autre aspect de cet apprentissage s’est manifesté lors de la partie basée sur l’algorithmie. En nous basant sur le plateau programmé, nous avons implémenté des <b> <i> algorithmes avancés </i> </b>
+                pour affiner les stratégies de jeu et compléter les calculs des scores. Ces algorithmes incluaient, entre autres, la détection de cycles et de chaînes, ainsi que
+                des colorations gloutonnes (C2 AC2).
+                La <b> <i> collaboration avec ma binôme </i></b> a été essentielle, notamment pour la répartition des tâches et les échanges constants sur les avancées du projet. Cette communication
+                a permis d’assurer une progression fluide et efficace dans le développement (C5 AC4, C6 AC2, C6 AC3).
+            </p>
+
+
+        </article>
+
+    </section>
+
+{% endblock %}

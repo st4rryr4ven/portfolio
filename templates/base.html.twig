@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    {% endblock %}
+</head>
+
+<body>
+
+<header>
+    <a href="{{ path('portfolio') }}">Accueil</a>
+    <a href="{{ path('experiences') }}">Expériences professionnelles</a>
+    <a href="{{ path('projects') }}">Projets</a>
+
+    <a href="{{ path('contact') }}">Contact</a>
+</header>
+
+{% block body %}{% endblock %}
+
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" aria-label="Fermer">×</span>
+    <img class="lightbox-img" src="" alt="">
+</div>
+
+{% block javascripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            document.querySelectorAll('.carousel').forEach(carousel => {
+                const track = carousel.querySelector('.carousel-track');
+                const slides = track.querySelectorAll('img');
+                const prevBtn = carousel.querySelector('.prev');
+                const nextBtn = carousel.querySelector('.next');
+
+                if (!track || slides.length === 0) return;
+
+                let index = 0;
+
+                function updateCarousel() {
+                    track.style.transform = `translateX(-${index * 100}%)`;
+                }
+
+                prevBtn?.addEventListener('click', () => {
+                    index = (index - 1 + slides.length) % slides.length;
+                    updateCarousel();
+                });
+
+                nextBtn?.addEventListener('click', () => {
+                    index = (index + 1) % slides.length;
+                    updateCarousel();
+                });
+            });
+
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-img');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+
+            document.querySelectorAll('.carousel-track img').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightbox.classList.add('active');
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                lightboxImg.src = '';
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            lightbox.addEventListener('click', e => {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') closeLightbox();
+            });
+
+        });
+    </script>
+{% endblock %}
+
+</body>
+</html>
+
+
+
